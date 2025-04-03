@@ -1,0 +1,14 @@
+import pandas as pd  
+
+def candidate_elimination(X, y):  
+    G, S = [["?"] * len(X[0])], X[0]  
+    for i in range(1, len(X)):  
+        if y[i] == "Yes":  
+            S = ["?" if S[j] != X[i][j] else S[j] for j in range(len(S))]  
+        else:  
+            G = [g for g in G if any(g[j] != "?" and g[j] != X[i][j] for j in range(len(g)))]  
+    return S, G  
+
+data = pd.read_csv("data.csv").values  
+S, G = candidate_elimination(data[:, :-1], data[:, -1])  
+print("S:", S, "\nG:", G)  
