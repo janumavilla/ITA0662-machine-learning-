@@ -1,0 +1,8 @@
+def find_s(X, y):  
+    h = X[0]  
+    for i in range(1, len(X)):  
+        if y[i] == "Yes":  
+            h = ["?" if h[j] != X[i][j] else h[j] for j in range(len(h))]  
+    return h  
+
+print(find_s([["A", "B"], ["A", "C"], ["D", "B"]], ["Yes", "Yes", "No"]))  
