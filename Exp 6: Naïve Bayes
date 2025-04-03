@@ -1,0 +1,11 @@
+from sklearn.naive_bayes import GaussianNB  
+from sklearn.metrics import confusion_matrix, accuracy_score  
+
+X = [[1, 2], [2, 3], [3, 4], [6, 7]]  
+y = [0, 0, 1, 1]  
+
+nb = GaussianNB().fit(X, y)  
+y_pred = nb.predict(X)  
+
+print(confusion_matrix(y, y_pred))  
+print("Accuracy:", accuracy_score(y, y_pred))  
