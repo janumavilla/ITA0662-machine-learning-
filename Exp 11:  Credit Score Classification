@@ -1,0 +1,7 @@
+from sklearn.linear_model import LogisticRegression  
+
+X = [[300], [500], [700], [800]]  
+y = ["Bad", "Fair", "Good", "Excellent"]  
+
+model = LogisticRegression().fit(X, y)  
+print(model.predict([[650]]))  
