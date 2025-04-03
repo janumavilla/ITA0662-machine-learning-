@@ -1,0 +1,7 @@
+from sklearn.neighbors import KNeighborsClassifier  
+
+X = [[1, 2], [2, 3], [3, 4], [6, 7]]  
+y = [0, 0, 1, 1]  
+
+knn = KNeighborsClassifier(n_neighbors=2).fit(X, y)  
+print(knn.predict([[2, 2]]))  
