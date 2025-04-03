@@ -1,0 +1,11 @@
+import numpy as np  
+
+X = np.random.rand(10)  
+params = np.random.rand(10)  
+
+for _ in range(10):  
+    weights = params / params.sum()  
+    params = weights * X  
+
+print(params)  
+
